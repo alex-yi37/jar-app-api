@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # using scope to change routes without changing directory structure: https://devblast.com/b/rails-5-routes-scope-vs-namespace
   scope :api do
     resources :users
   end
