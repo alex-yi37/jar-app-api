@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_08_052750) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_22_234018) do
+  create_table "jars", force: :cascade do |t|
+    t.string "display_name"
+    t.string "description"
+    t.string "submission_time"
+    t.string "design_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
