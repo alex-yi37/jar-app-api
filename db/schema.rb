@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_22_234018) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_23_014355) do
   create_table "jars", force: :cascade do |t|
     t.string "display_name"
     t.string "description"
@@ -18,6 +18,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_22_234018) do
     t.string "design_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_jars_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -30,4 +32,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_22_234018) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "jars", "users"
 end
