@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_30_202629) do
+ActiveRecord::Schema[7.0].define(version: 2024_05_01_202300) do
   create_table "jar_invites", force: :cascade do |t|
     t.integer "sender_id"
     t.integer "recipient_id"
     t.integer "jar_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
     t.index ["jar_id"], name: "index_jar_invites_on_jar_id"
     t.index ["recipient_id"], name: "index_jar_invites_on_recipient_id"
     t.index ["sender_id"], name: "index_jar_invites_on_sender_id"
