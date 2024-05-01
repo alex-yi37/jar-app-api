@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_02_202253) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_30_202629) do
+  create_table "jar_invites", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.integer "jar_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["jar_id"], name: "index_jar_invites_on_jar_id"
+    t.index ["recipient_id"], name: "index_jar_invites_on_recipient_id"
+    t.index ["sender_id"], name: "index_jar_invites_on_sender_id"
+  end
+
   create_table "jars", force: :cascade do |t|
     t.string "display_name"
     t.string "description"
@@ -49,5 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_02_202253) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "jar_invites", "users", column: "recipient_id"
+  add_foreign_key "jar_invites", "users", column: "sender_id"
   add_foreign_key "jars", "users"
 end
