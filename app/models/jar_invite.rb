@@ -6,7 +6,7 @@ class JarInvite < ApplicationRecord
 
   # following these links to implement this:
   # https://blog.saeloun.com/2022/01/05/how-to-use-enums-in-rails/
-  # https://www.honeybadger.io/blog/how-to-use-enum-attributes-in-ruby-on-rails/#:~:text=To%20add%20an%20enum%20attribute%20to%20an%20existing%20table%20in,by%20creating%20a%20new%20migration.&text=Next%2C%20edit%20your%20model%20to,mappings%20of%20strings%20to%20integers.&text=That's%20it!,to%20actually%20use%20the%20enum.
+  # https://www.honeybadger.io/blog/how-to-use-enum-attributes-in-ruby-on-rails/
   enum status: {
     pending: 0,
     accepted: 1,
