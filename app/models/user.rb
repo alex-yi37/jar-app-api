@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  # association to indicate jars that a user belongs to through :jars_users join table
+  has_and_belongs_to_many :jars
 
   # association to indicate a User has many Jars through the Jar table itself
   has_many :owned_jars, class_name: 'Jar'
