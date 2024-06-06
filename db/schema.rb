@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_01_202300) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_05_232618) do
   create_table "jar_invites", force: :cascade do |t|
     t.integer "sender_id"
     t.integer "recipient_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_01_202300) do
     t.integer "user_id", null: false
     t.integer "jar_id", null: false
     t.index ["jar_id"], name: "index_jars_users_on_jar_id"
+    t.index ["user_id", "jar_id"], name: "jars_users_unique_index", unique: true
     t.index ["user_id"], name: "index_jars_users_on_user_id"
   end
 
