@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   # association to indicate a User has many Jars through the Jar table itself
   has_many :owned_jars, class_name: 'Jar'
+  has_many :notes
 
   # SO thread for listing :belongs_to associations
   # https://stackoverflow.com/questions/8371574/is-there-a-way-to-list-all-belongs-to-associations
