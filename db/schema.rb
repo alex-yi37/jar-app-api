@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_06_05_232618) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_21_202947) do
   create_table "jar_invites", force: :cascade do |t|
     t.integer "sender_id"
     t.integer "recipient_id"
@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_05_232618) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
-    t.string "password_hash"
+    t.string "password_digest"
     t.string "display_name"
     t.date "birthday"
     t.datetime "created_at", null: false
